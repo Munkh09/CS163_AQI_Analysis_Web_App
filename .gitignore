@@ -18,3 +18,7 @@ secrets.json
 
 # Ignore logs
 *.log
+
+# IDE/editor configs
+.idea/
+.vscode/
