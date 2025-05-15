@@ -6,3 +6,5 @@ entrypoint: gunicorn -b :$PORT app:server
 env_variables:
   BUCKET_NAME_1: 'pm25_correlation_data'
   BUCKET_NAME_2: 'fresno_daily_data'
+  BUCKET_NAME_3: 'munkh_models_lstm'
+instance_class: F2  # This increases memory to 1 GB

@@ -1,34 +1,98 @@
 body {
-    background-color: #E7F6F8;
+    background-color:  #f4f7f6;
+    color: #2d3436;
 }
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #4AA8D8;
+    background-color: #1e2a38;
+    padding: 10px 20px;
+    color: white;
+    position: relative;
 }
 
-.navbar p {
+/* Flex container to align brand and nav links in one row */
+.navbar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+/* Show brand and nav inline on large screens */
+.navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.brand {
     font-size: 24px;
-    color: #333333;
-    padding-left: 5px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
 }
 
 .navlinks {
+    list-style: none;
     display: flex;
-    align-items: center;
-    gap: 15px;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 
-.navbar a {
+.navlinks li {
+    margin-left: 20px;
+}
+
+.navlinks a {
+    color: white;
     text-decoration: none;
-    color: #333333;
-    padding: 0px 5px;
+    font-weight: bold;
 }
 
-.navbar a:hover {
+/* Hamburger menu icon hidden on desktop */
+.menu-icon {
+    display: none;
+    font-size: 26px;
+    cursor: pointer;
     color: white;
 }
 
+/* Responsive: stack nav links vertically under navbar */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .navbar-header {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .navlinks {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1e2a38;
+        border-top: 1px solid #333;
+    }
+
+    .navlinks li {
+        margin: 10px 0;
+    }
+
+    .navlinks.show {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+.navlinks a:hover {
+    color: #00b894;
+}
